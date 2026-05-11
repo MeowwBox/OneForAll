@@ -248,11 +248,11 @@ def save_to_file(path, data):
     :return: 保存成功与否
     """
     try:
-        with open(path, 'w', errors='ignore', newline='') as file:
+        with open(path, 'w', errors='ignore', newline='', encoding='utf-8') as file:
             file.write(data)
             return True
     except TypeError:
-        with open(path, 'wb') as file:
+        with open(path, 'wb', encoding='utf-8') as file:
             file.write(data)
             return True
     except Exception as e:
